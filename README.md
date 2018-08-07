@@ -19,19 +19,4 @@ fsd
 fsd
 f
 
-g
-g
-g
-gg
-
-dfsf
-s
-f
-
-sdf
-dsf
-sdf
-
-sdfds
-fds
 f
