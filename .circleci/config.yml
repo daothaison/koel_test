@@ -162,7 +162,7 @@ jobs:
       - run: framgia-ci test-connect 127.0.0.1 3306 80
       - run: framgia-ci run --local
       - store_test_results:
-          path: .framgia-ci-reports
+          path: .framgia-ci-reports/phpcs.xml
 
 workflows:
   version: 2
