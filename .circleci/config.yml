@@ -55,6 +55,7 @@ jobs:
     steps:
       - checkout
       - run: cp .env.example .env
+      - run: pwd
 
       # composer cache
       - restore_cache:
