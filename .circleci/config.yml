@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  build-1:
     docker:
       - image: daothaison/civ3-workspace:latest
       - image: mysql:5.7
@@ -40,3 +40,135 @@ jobs:
       - run: framgia-ci run --local
       - store_test_results:
           path: .framgia-ci-reports
+
+  build-2:
+    docker:
+      - image: daothaison/civ3-workspace:latest
+      - image: mysql:5.7
+        environment:
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_DATABASE: homestead_test
+          MYSQL_USER: homestead_test
+          MYSQL_PASSWORD: secret
+          MYSQL_ROOT_PASSWORD: root
+
+    steps:
+      - checkout
+      - run: cp .env.example .env
+
+      # composer cache
+      - restore_cache:
+          keys:
+            - vendor-v3-{{ checksum "composer.lock" }}
+      - run: composer install
+      - save_cache:
+          key: vendor-v3-{{ checksum "composer.lock" }}
+          paths:
+            - vendor
+
+      # node cache
+      - restore_cache:
+          keys:
+            - node-modules-v3-{{ checksum "resources/assets/yarn.lock" }}
+      - run: cd resources/assets && yarn install
+      - save_cache:
+          key: node-modules-v3-{{ checksum "resources/assets/yarn.lock" }}
+          paths:
+            - resources/assets/node_modules
+
+      # run
+      - run: framgia-ci test-connect 127.0.0.1 3306 80
+      - run: framgia-ci run --local
+      - store_test_results:
+          path: .framgia-ci-reports
+
+  build-3:
+    docker:
+      - image: daothaison/civ3-workspace:latest
+      - image: mysql:5.7
+        environment:
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_DATABASE: homestead_test
+          MYSQL_USER: homestead_test
+          MYSQL_PASSWORD: secret
+          MYSQL_ROOT_PASSWORD: root
+
+    steps:
+      - checkout
+      - run: cp .env.example .env
+
+      # composer cache
+      - restore_cache:
+          keys:
+            - vendor-v3-{{ checksum "composer.lock" }}
+      - run: composer install
+      - save_cache:
+          key: vendor-v3-{{ checksum "composer.lock" }}
+          paths:
+            - vendor
+
+      # node cache
+      - restore_cache:
+          keys:
+            - node-modules-v3-{{ checksum "resources/assets/yarn.lock" }}
+      - run: cd resources/assets && yarn install
+      - save_cache:
+          key: node-modules-v3-{{ checksum "resources/assets/yarn.lock" }}
+          paths:
+            - resources/assets/node_modules
+
+      # run
+      - run: framgia-ci test-connect 127.0.0.1 3306 80
+      - run: framgia-ci run --local
+      - store_test_results:
+          path: .framgia-ci-reports
+
+  build-4:
+    docker:
+      - image: daothaison/civ3-workspace:latest
+      - image: mysql:5.7
+        environment:
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_DATABASE: homestead_test
+          MYSQL_USER: homestead_test
+          MYSQL_PASSWORD: secret
+          MYSQL_ROOT_PASSWORD: root
+
+    steps:
+      - checkout
+      - run: cp .env.example .env
+
+      # composer cache
+      - restore_cache:
+          keys:
+            - vendor-v3-{{ checksum "composer.lock" }}
+      - run: composer install
+      - save_cache:
+          key: vendor-v3-{{ checksum "composer.lock" }}
+          paths:
+            - vendor
+
+      # node cache
+      - restore_cache:
+          keys:
+            - node-modules-v3-{{ checksum "resources/assets/yarn.lock" }}
+      - run: cd resources/assets && yarn install
+      - save_cache:
+          key: node-modules-v3-{{ checksum "resources/assets/yarn.lock" }}
+          paths:
+            - resources/assets/node_modules
+
+      # run
+      - run: framgia-ci test-connect 127.0.0.1 3306 80
+      - run: framgia-ci run --local
+      - store_test_results:
+          path: .framgia-ci-reports
+
+workflows:
+  version: 2
+  build-multiple:
+    jobs:
+      - build-1
+      - build-2
+      - build-3
+      - build-4
