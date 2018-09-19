@@ -11,7 +11,6 @@ class ArtistTableSeeder extends Seeder
     public function run()
     {
         Artist::create([
-            'id' => Artist::UNKNOWN_ID,
             'name' => Artist::UNKNOWN_NAME,
         ]);
     }

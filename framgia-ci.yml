@@ -14,7 +14,6 @@ build:
       - cp .env.civ3.example .env
       - composer install
       - framgia-ci test-connect mysql_test 3306 80
-      - framgia-ci run --local
 test:
   phpunit:
     ignore: true

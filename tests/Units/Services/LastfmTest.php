@@ -8,7 +8,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class LastfmTest extends TestCase
 {
-    use DatabaseMigrations;
+
     /** @test */
     public function it_builds_lastfm_compatible_api_parameters()
     {

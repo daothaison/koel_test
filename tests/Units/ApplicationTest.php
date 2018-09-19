@@ -11,7 +11,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ApplicationTest extends TestCase
 {
-    use DatabaseMigrations;
+
     public function setUp()
     {
         parent::setUp();

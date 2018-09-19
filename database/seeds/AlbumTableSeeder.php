@@ -12,8 +12,6 @@ class AlbumTableSeeder extends Seeder
     public function run()
     {
         Album::create([
-            'id' => Album::UNKNOWN_ID,
-            'artist_id' => Artist::UNKNOWN_ID,
             'name' => Album::UNKNOWN_NAME,
             'cover' => Album::UNKNOWN_COVER,
         ]);
