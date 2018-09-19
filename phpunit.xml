@@ -11,10 +11,32 @@
     <testsuites>
         <testsuite name="feature">
             <directory suffix="Test.php">./tests/Feature</directory>
+            <directory suffix="Test.php">./tests/Featurea</directory>
+            <directory suffix="Test.php">./tests/Featureb</directory>
         </testsuite>
 
         <testsuite name="unit">
             <directory suffix="Test.php">./tests/Unit</directory>
+            <directory suffix="Test.php">./tests/Unita</directory>
+            <directory suffix="Test.php">./tests/Unitb</directory>
+            <directory suffix="Test.php">./tests/Unitc</directory>
+            <directory suffix="Test.php">./tests/Unitd</directory>
+            <directory suffix="Test.php">./tests/Unite</directory>
+            <directory suffix="Test.php">./tests/Unitf</directory>
+            <directory suffix="Test.php">./tests/Unitg</directory>
+            <directory suffix="Test.php">./tests/Unith</directory>
+            <directory suffix="Test.php">./tests/Uniti</directory>
+            <directory suffix="Test.php">./tests/Unitj</directory>
+            <directory suffix="Test.php">./tests/Unitk</directory>
+            <directory suffix="Test.php">./tests/Unitl</directory>
+            <directory suffix="Test.php">./tests/Unitm</directory>
+            <directory suffix="Test.php">./tests/Unitn</directory>
+            <directory suffix="Test.php">./tests/Unito</directory>
+            <directory suffix="Test.php">./tests/Unitp</directory>
+            <directory suffix="Test.php">./tests/Unitq</directory>
+            <directory suffix="Test.php">./tests/Unitr</directory>
+            <directory suffix="Test.php">./tests/Units</directory>
+            <directory suffix="Test.php">./tests/Unitt</directory>
         </testsuite>
 
         <testsuite name="integration">
@@ -34,7 +56,7 @@
         <env name="CACHE_DRIVER" value="array"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="QUEUE_DRIVER" value="sync"/>
-        <env name="DB_CONNECTION" value="sqlite"/>
+        <env name="DB_CONNECTION" value="mysql"/>
         <env name="LASTFM_API_KEY" value="foo"/>
         <env name="LASTFM_API_SECRET" value="bar"/>
         <env name="YOUTUBE_API_KEY" value="foo"/>

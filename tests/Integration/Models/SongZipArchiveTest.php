@@ -5,7 +5,6 @@ namespace Tests\Integration\Models;
 use App\Models\Song;
 use App\Models\SongZipArchive;
 use Tests\TestCase;
-
 class SongZipArchiveTest extends TestCase
 {
     /** @test */

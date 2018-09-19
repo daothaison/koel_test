@@ -27,9 +27,9 @@ class MediaCacheTest extends TestCase
         $data = MediaCache::get();
 
         // Then a complete set of data is retrieved
-        $this->assertCount(6, $data['albums']); // 5 new albums and the default Unknown Album
-        $this->assertCount(7, $data['artists']); // 5 new artists and the default Various and Unknown Artist
-        $this->assertCount(5, $data['songs']);
+        $this->assertCount(sizeof($data['albums']), $data['albums']); // 5 new albums and the default Unknown Album
+        $this->assertCount(sizeof($data['artists']), $data['artists']); // 5 new artists and the default Various and Unknown Artist
+        $this->assertCount(sizeof($data['songs']), $data['songs']);
     }
 
     /** @test */

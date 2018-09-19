@@ -4,9 +4,11 @@ namespace Tests\Unit\Services;
 
 use App\Services\iTunes;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class iTunesTest extends TestCase
 {
+    use DatabaseMigrations;
     /** @test */
     public function it_can_be_instantiated()
     {

@@ -8,10 +8,11 @@ use GuzzleHttp\Psr7\Response;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Mockery as m;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class RESTfulAPIServiceTest extends TestCase
 {
-    use WithoutMiddleware;
+    use WithoutMiddleware, DatabaseMigrations;
 
     protected function tearDown()
     {
